@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Pantallas - Patrones de Diseño</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tienda de Pantallas</h1>
+            <p class="subtitle">Inventario de panatallas</p>
+        </header>
+
+        <!-- SECCIÓN: AGREGAR PANTALLA -->
+        <section class="card">
+            <h2>+ Agregar Pantalla</h2>
+            <form id="formAgregar">
+                <div class="form-group">
+                    <label for="modelo">Modelo de Pantalla:</label>
+                    <input type="text" id="modelo" placeholder="Ej: Samsung 24'' LED Full HD" required>
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio Base (USD $):</label>
+                    <input type="number" id="precio" min="0" step="0.01" placeholder="Ej: 250.00" required>
+                </div>
+                
+                <div class="decoradores">
+                    <label> Aplicar Opciones Adicionales (Patrón Decorator):</label>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" id="descuento" value="10">
+                            Aplicar 10% de Descuento
+                        </label>
+                        <label>
+                            <input type="checkbox" id="garantia" value="50">
+                            Garantía Extendida (+bs.50.00)
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Agregar al Inventario</button>
+            </form>
+        </section>
+
+        <!-- SECCIÓN: FILTROS Y BÚSQUEDA -->
+        <section class="card">
+            <h2> Buscar Pantalla por Modelo</h2>
+            <div class="form-group">
+                <input type="text" id="buscar" placeholder="Escribe el modelo para buscar...">
+            </div>
+        </section>
+
+        <!-- SECCIÓN: NOTIFICACIONES (OBSERVER) -->
+        <section class="card">
+            <div id="notificaciones" class="notificaciones"></div>
+        </section>
+
+        <!-- SECCIÓN: INVENTARIO DE PANTALLAS -->
+        <section class="card">
+            <h2> Inventario Actual de Pantallas</h2>
+            <div id="listaInventario" class="inventario-grid">
+                <p class="empty-message">No hay pantallas en el inventario. Agrega la primera pantalla arriba.</p>
+            </div>
+        </section>
+
+
+        <footer>
+            <p>pedidos por mayor y menor </p>
+            <p>contactanos</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
