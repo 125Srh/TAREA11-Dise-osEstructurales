@@ -10,9 +10,9 @@
 :root {
     --primary-color: #2563eb;
     --secondary-color: #1e40af;
-    --success-color: #0004e0;
+    --success-color: #10b981;
     --danger-color: #ef4444;
-    --warning-color: #ff0000;
+    --warning-color: #f59e0b;
     --dark-color: #1f2937;
     --light-color: #f3f4f6;
     --border-radius: 12px;
@@ -22,7 +22,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #01030b 0%, #6400c9 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 20px;
     color: var(--dark-color);
@@ -73,6 +73,47 @@ header h1 {
     font-size: 1.5rem;
     border-bottom: 3px solid var(--primary-color);
     padding-bottom: 10px;
+}
+
+/* ============================================
+   INFORMACIÓN DE ARQUITECTURA
+   ============================================ */
+.arquitectura-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.capa {
+    background: var(--light-color);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.capa h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.capa ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.capa li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+code {
+    background: #1f2937;
+    color: #10b981;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
 }
 
 /* ============================================
@@ -176,7 +217,7 @@ header h1 {
 }
 
 .btn-danger:hover {
-    background: #b60000;
+    background: #dc2626;
     transform: scale(1.05);
 }
 
@@ -210,7 +251,7 @@ header h1 {
 
 .notificacion.exito {
     background: #d1fae5;
-    color: #00fbb4;
+    color: #065f46;
     border-left: 4px solid var(--success-color);
 }
 
@@ -230,8 +271,8 @@ header h1 {
 }
 
 .pantalla-card {
-    background: linear-gradient(135deg, #001ea5 0%, #764ba2 100%);
-    color: white;
+    background: white;
+    border: 2px solid #e5e7eb;
     padding: 20px;
     border-radius: 12px;
     box-shadow: var(--shadow);
@@ -253,17 +294,18 @@ header h1 {
 .pantalla-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-hover);
+    border-color: var(--primary-color);
 }
 
 .pantalla-card h3 {
     font-size: 1.2rem;
     margin-bottom: 15px;
-    border-bottom: 2px solid rgba(181, 210, 35, 0.3);
+    border-bottom: 2px solid #e5e7eb;
     padding-bottom: 10px;
 }
 
 .precio-info {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--light-color);
     padding: 12px;
     border-radius: 8px;
     margin: 15px 0;
@@ -273,12 +315,13 @@ header h1 {
     font-size: 0.9rem;
     opacity: 0.8;
     text-decoration: line-through;
+    color: #6b7280;
 }
 
 .precio-final {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #28ae0a;
+    color: var(--success-color);
 }
 
 .decoradores-aplicados {
@@ -288,52 +331,20 @@ header h1 {
 
 .decoradores-aplicados span {
     display: inline-block;
-    background: rgba(168, 186, 98, 0.3);
+    background: var(--primary-color);
+    color: white;
     padding: 4px 10px;
     border-radius: 20px;
     margin: 4px;
+    font-size: 0.8rem;
 }
 
 .empty-message {
     text-align: center;
-    color: #00e900;
+    color: #6b7280;
     font-style: italic;
     padding: 40px;
     grid-column: 1 / -1;
-}
-
-/* ============================================
-   INFORMACIÓN DE PATRONES
-   ============================================ */
-.info-card {
-    background: #fef3c7;
-    border-left: 5px solid var(--warning-color);
-}
-
-.patron-info {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: white;
-    border-radius: 8px;
-}
-
-.patron-info h3 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.patron-info p {
-    margin-bottom: 8px;
-    line-height: 1.6;
-}
-
-.patron-info code {
-    background: var(--light-color);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-    color: var(--danger-color);
-    font-weight: 600;
 }
 
 /* ============================================
@@ -342,8 +353,11 @@ header h1 {
 footer {
     text-align: center;
     padding: 20px;
-    color: rgb(8, 1, 17);
+    color: white;
     font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    margin-top: 30px;
 }
 
 /* ============================================
@@ -360,5 +374,9 @@ footer {
 
     .checkbox-group {
         flex-direction: column;
+    }
+
+    .arquitectura-info {
+        grid-template-columns: 1fr;
     }
 }
